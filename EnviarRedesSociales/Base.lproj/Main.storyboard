@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,66 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EnviarRedesSociales" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FRASE DEL DIA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3K-Jb-Iqc">
+                                <rect key="frame" x="128" y="73" width="119" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCV-Fv-J9c">
+                                <rect key="frame" x="16" y="133" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camara" translatesAutoresizingMaskIntoConstraints="NO" id="xst-82-kup">
+                                <rect key="frame" x="16" y="187" width="343" height="231"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="231" id="zHD-yN-AqF"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeY-tN-BmM">
+                                <rect key="frame" x="120" y="454" width="134" height="30"/>
+                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="COMPARTIR"/>
+                                <connections>
+                                    <action selector="compartir:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mxx-XV-Ykx"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aCV-Fv-J9c" firstAttribute="top" secondItem="Z3K-Jb-Iqc" secondAttribute="bottom" constant="39" id="7rX-oq-XXl"/>
+                            <constraint firstItem="Z3K-Jb-Iqc" firstAttribute="centerX" secondItem="aCV-Fv-J9c" secondAttribute="centerX" id="GIr-CW-2jP"/>
+                            <constraint firstItem="aCV-Fv-J9c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Iyb-Jf-771"/>
+                            <constraint firstItem="xst-82-kup" firstAttribute="top" secondItem="aCV-Fv-J9c" secondAttribute="bottom" constant="24" id="KHc-1q-Oc7"/>
+                            <constraint firstItem="aCV-Fv-J9c" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VPS-nI-zXX"/>
+                            <constraint firstItem="xeY-tN-BmM" firstAttribute="top" secondItem="xst-82-kup" secondAttribute="bottom" constant="36" id="WuG-RH-4Mo"/>
+                            <constraint firstItem="Z3K-Jb-Iqc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="53" id="Wwc-1p-ENU"/>
+                            <constraint firstItem="aCV-Fv-J9c" firstAttribute="leading" secondItem="xst-82-kup" secondAttribute="leading" id="jJQ-rl-FwP"/>
+                            <constraint firstItem="xst-82-kup" firstAttribute="centerX" secondItem="xeY-tN-BmM" secondAttribute="centerX" id="pMe-bb-uge"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xeY-tN-BmM" secondAttribute="bottom" constant="183" id="qhi-xa-FvF"/>
+                            <constraint firstItem="aCV-Fv-J9c" firstAttribute="trailing" secondItem="xst-82-kup" secondAttribute="trailing" id="r5h-aV-VEW"/>
+                            <constraint firstItem="xeY-tN-BmM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="zTs-gS-da8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imagen" destination="xst-82-kup" id="AKm-03-0PO"/>
+                        <outlet property="texto" destination="aCV-Fv-J9c" id="Qef-3W-Gql"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camara" width="170" height="170"/>
+    </resources>
 </document>
